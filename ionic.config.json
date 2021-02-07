@@ -1,0 +1,7 @@
+{
+  "name": "exe_reader_bar_code",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
