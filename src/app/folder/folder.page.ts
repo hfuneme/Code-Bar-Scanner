@@ -19,25 +19,14 @@ export class FolderPage implements OnInit {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
+  readBarCode() {
+    CodeBarScanner.readBarCode({color: "rojo", activo: false, num: 8, obj: {nombre: "Harold Funeme", edad: 31, vivo:true} }).then(options => {
+      console.log("------Ojeto desde app---------");
+      console.log(options);
+    }).catch(err => {
+      console.error(err);
+    });
 
-  executeBarCode() {
-    CodeBarScanner.echo({value: 'plugin con BarCodeHHFM.com', id: 1989}).then(res => {
-        console.log(res);
-      }).catch(err => {
-        console.error(err);
-      });
-      CodeBarScanner.suma({numero1: 2, numero2: 5}).then(res => {
-        console.log("------SUMA---------");
-        console.log(res);
-      }).catch(err => {
-        console.error(err);
-      });
-      CodeBarScanner.resta({numero1: 12, numero2: 6}).then(res => {
-        console.log("------RESTA---------");
-        console.log(res);
-      }).catch(err => {
-        console.error(err);
-      });
   }
 
 }
